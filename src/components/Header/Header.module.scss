@@ -1,0 +1,16 @@
+.wrapper {
+    flex: 0 1 55px ;
+    display: flex;
+    background: #0067A3;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.title {
+    color: #FFF;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal
+}

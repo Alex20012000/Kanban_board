@@ -1,0 +1,45 @@
+$gap: 15px;
+
+.wrapper {
+    background: #EBECF0;
+    border-radius: 10px;
+    width: 282px;
+    padding: 12px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-bottom: $gap;
+    color: #000;
+    font-size: 18px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+.addCard {
+    display: flex;
+    align-items: center;
+    margin-top: calc($gap + 2px);
+    cursor: pointer;
+
+    &Text {
+        margin-left: 3px;
+        line-height: 21px;
+        color: #5E6C84;
+    }
+}
+
+.newCard {
+    margin: $gap 0;
+    display: flex;
+
+    & > * {
+        flex-grow: 1;
+    }
+}
