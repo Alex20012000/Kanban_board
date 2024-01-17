@@ -1,4 +1,6 @@
 export enum STATUS_CARD {
     BACKLOG = 'BACKLOG',
     READY = 'READY',
+    IN_PROGRESS = 'IN_PROGRESS',
+    FINISHED = 'FINISHED',
 };
