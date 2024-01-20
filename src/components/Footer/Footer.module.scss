@@ -2,4 +2,29 @@
     display: flex;
     flex: 0 1 55px ;
     background: #0067A3;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 21px;
+}
+
+.title{
+    display: flex;
+    color: #FFF;
+    font-size: 18px;
+}
+
+.numberTasks {
+    display: flex;
+    gap: 36px;
+}
+
+.board {
+    color: #FFF;
+    font-size: 18px;
+}
+
+@media (max-width: 760px) {
+    .wrapper {
+        display: none;
+    }
 }

@@ -1,13 +1,13 @@
 $gap: 15px;
 
-.wrapper {
-    background: #EBECF0;
+.column {
     border-radius: 10px;
-    width: 282px;
+    background: #EBECF0;
     padding: 12px;
-    padding-bottom: 8px;
     display: flex;
     flex-direction: column;
+    width: 282px;
+    padding-bottom: 8px;
 }
 
 .title {
@@ -33,6 +33,7 @@ $gap: 15px;
         line-height: 21px;
         color: #5E6C84;
     }
+    
     &_disabled {
         cursor: none;
     }

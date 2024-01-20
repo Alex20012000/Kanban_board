@@ -1,16 +1,13 @@
 import React, { FC } from 'react';
 
-import Menu from './Menu/Menu';
+import Profile from './ProfileBlock/ProfileBlock';
 
 import styles from './Header.module.scss';
 
-interface Props {
-}
-
-const Header: FC<Props> = () => {
+const Header: FC = () => {
     return <header className = {styles.wrapper}>
         <span className = {styles.title}>Awesome Kanban Board</span>
-        <Menu />
+        <Profile />
     </header>
 }
 

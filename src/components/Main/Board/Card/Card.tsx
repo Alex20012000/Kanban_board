@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Input from '../../../common/Input/Input';
 
@@ -14,7 +15,13 @@ interface Props {
     setNewCard?: (card: ICard) => void;
 }
 
-const Card: FC<Props> = ({card, newCard, setNewCard, prevStatusCards, selectCard}) => {
+const Card: FC<Props> = ({
+    card, 
+    newCard, 
+    setNewCard, 
+    prevStatusCards,
+    selectCard,
+}) => {
     const [newCardVal, setNewCardVal] = useState('');
 
     useEffect(() => {
@@ -23,12 +30,10 @@ const Card: FC<Props> = ({card, newCard, setNewCard, prevStatusCards, selectCard
             _newCard.title = newCardVal;
             setNewCard && setNewCard(_newCard);
         }
-    }, [newCardVal])
+    }, [newCardVal]);
 
     if (prevStatusCards && prevStatusCards.length) {
-        return <select onChange = {(e) => {
-            console.log('select', e, selectCard);
-            
+        return <select className = {styles.input} onChange = {(e) => {
             selectCard && selectCard(e.target.value);
         }}>
             <option key = {'default'} value = {0}>Выберете карточку...</option>
@@ -38,9 +43,11 @@ const Card: FC<Props> = ({card, newCard, setNewCard, prevStatusCards, selectCard
 
     if (newCard && !card) return <Input name = 'NewCardInput' onChange = {setNewCardVal} value = {newCardVal}/>;
 
-    return <div className = {styles.wrapper}>
-        {card?.title}
-    </div>
+    return <Link to = {`card/${card?.id}`}>
+        <div className = {styles.wrapper}>
+            {card?.title}
+        </div>
+    </Link>
 }
 
 export default Card;

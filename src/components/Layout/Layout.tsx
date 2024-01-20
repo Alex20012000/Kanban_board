@@ -6,10 +6,7 @@ import Footer from '../Footer/Footer';
 
 import styles from './Layout.module.scss';
 
-interface Props {
-}
-
-const Layout: FC<Props> = () => {
+const Layout: FC = () => {
     return <div className = {styles.wrapper}>
         <Header />
         <Main />

@@ -1,0 +1,9 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.arrowRevers {
+    transform: rotate(180deg);
+}

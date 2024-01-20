@@ -1,0 +1,40 @@
+.wrapper {
+    margin: 28px 22px;
+    padding: 28px 22px;
+    flex: 1 0 70%;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    border: none;
+    color: #000;
+    font-size: 24px;
+    
+    &:focus {
+        outline: none;
+    }
+}
+
+.description {
+    resize: none;
+    height: 100%;
+    margin-top: 35px;
+    border: none;
+    color: #000;
+    font-size: 18px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 23px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}

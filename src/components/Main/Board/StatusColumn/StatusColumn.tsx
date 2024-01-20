@@ -66,34 +66,37 @@ const StatusColumn: FC<Props> = ({
     }, [applyChange, newCard]);
 
     return <div className = {styles.wrapper}>
-        <h2 className = {styles.title}>{title}</h2>
+        <div className = {styles.column}>
+            <h2 className = {styles.title}>{title}</h2>
 
-        <div className = {styles.cards}>
-            {data?.map((card) => <Card key={card.id} card = {card} />)}
+            <div className = {styles.cards}>
+                {data?.map((card) => <Card key={card.id} card = {card} />)}
+            </div>
+
+            {newCard && isBacklog && <div className = {styles.newCard}><Card newCard = {newCard} setNewCard = {setNewCard} /></div>}
+            {showSelectorCard && !isBacklog && 
+                <div className = {styles.selectCard}>
+                    <Card 
+                        selectCard = {onSelect} 
+                        prevStatusCards = {prevStatusData} 
+                        setNewCard = {setNewCard} 
+                    />
+                </div>
+            }
+            
+            {!newCard 
+                ? !showSelectorCard && <div 
+                    className = {cn(styles.addCard, {
+                        [styles.addCard_disabled]: !isBacklog && !prevStatusData?.length
+                    })}
+                    onClick = {addCardEmpty}
+                >
+                    <Icon width = {16} path = {AddIcon} alt='Add card' />
+                    <span className = {styles.addCardText}>Add card</span>
+                </div>
+                : isBacklog && <Button disabled = {!newCard.title} onClick = {onSubmit}>Submit</Button>
+            }
         </div>
-
-        {newCard && isBacklog && <div className = {styles.newCard}><Card newCard = {newCard} setNewCard = {setNewCard} /></div>}
-        {showSelectorCard && !isBacklog && 
-            <div className = {styles.selectCard}>
-                <Card 
-                    selectCard = {onSelect} 
-                    prevStatusCards = {prevStatusData} 
-                    setNewCard = {setNewCard} 
-                />
-            </div>
-        }
-        
-        {!newCard 
-            ? !showSelectorCard && <div 
-            className = {cn(styles.addCard, {
-                [styles.addCard_disabled]: !isBacklog && !prevStatusData?.length
-            })}
-            onClick = {addCardEmpty}>
-                <Icon width = {16} path = {AddIcon} alt='Add card' />
-                <span className = {styles.addCardText}>Add card</span>
-            </div>
-            : isBacklog && <Button disabled = {!newCard.title} onClick = {onSubmit}>Submit</Button>
-        }
     </div>
 };
 

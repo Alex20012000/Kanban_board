@@ -1,6 +1,12 @@
 .wrapper {
+    display: flex;
     padding: 20px;
     color: #000000;
-    display: flex;
     gap: 24px;
+}
+
+@media (max-width: 760px) {
+    .wrapper {
+        flex-direction: column;
+    }
 }

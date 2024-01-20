@@ -1,0 +1,30 @@
+.wrapper {
+    position: absolute;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    width: 134px;
+    padding: 7px;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+    &_item { 
+        list-style-type: none; 
+        
+        &:hover {
+            background-color: aqua;
+        }
+    }
+}
